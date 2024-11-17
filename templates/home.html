@@ -1,17 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homepagina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashTagger Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="inner-container">
-            <h1>Stash Thrash</h1>
-        </div>
-    </div>
+    <header>
+        <h1>Welcome to TrashTagger</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            {% if 'user_id' in session %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <section class="intro">
+        <p>Join us in making the world cleaner, one report at a time!</p>
+
+    </section>
 </body>
 </html>

@@ -4,36 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - TrashTagger</title>
+    <title>Register - TrashTagger</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Login to TrashTagger</h1>
-     
+        <h1>Register for TrashTagger</h1>
         <nav>
             <a href="{{ url_for('home') }}">Home</a>
-            {% if 'user_id' in session %}
-                <a href="{{ url_for('logout') }}">Logout</a>
-            {% else %}
-                <a href="{{ url_for('login') }}">Login</a>
-                <a href="{{ url_for('register') }}">Register</a>
-            {% endif %}
-            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
     <section class="form-container">
-        {% if user_not_found %}
-        <h1 style = "color: red">Invalid email or password</h1>
-        {% endif %}
-        <form action="/login" method="post">
+        <form action="{{ url_for('register') }}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             
-            <button type="submit">Login</button>
+            <button type="submit">Register</button>
         </form>
     </section>
 </body>
