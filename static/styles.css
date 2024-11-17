@@ -70,3 +70,54 @@ button:hover {
     background-color: #45a049;
 }
 
+
+.report-page body {
+    background-color: #f9f9f9; 
+}
+
+.report-page header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.report-page .form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-page label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.report-page input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.report-page button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.report-page button:hover {
+    background-color: #45a049;
+}

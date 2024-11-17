@@ -69,6 +69,35 @@ def register():
     return render_template('register.html', logged_in='user_id' in session)
 
 
+@app.route('/report', methods=['GET', 'POST'])
+def report():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        location = request.form['location']
+        user_id = session['user_id']
+
+        photo = request.files['photo']
+        if photo and allowed_file(photo.filename):
+            filename = secure_filename(photo.filename) 
+            photo_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            photo.save(photo_path)  
+
+            
+            new_report = Report(user_id=user_id, street_name=location, points=10, photo_path=f'uploads/{filename}')
+            try:
+                db_session.add(new_report)
+                db_session.commit()
+                return redirect(url_for('home'))
+            except Exception as e:
+                db_session.rollback()
+                print(f"Error: {e}")
+
+        
+        return redirect(url_for('report'))
+
+    return render_template('report.html', logged_in='user_id' in session)
 
 
 @app.route('/logout')
