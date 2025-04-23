@@ -121,3 +121,59 @@ button:hover {
 .report-page button:hover {
     background-color: #45a049;
 }
+
+
+
+/* Add styles for the contact page */
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+h1, h2 {
+color: #2e7d32;
+}
+
+.contact-form {
+display: flex;
+flex-direction: column;
+}
+
+.contact-form label {
+margin-top: 10px;
+font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+.contact-form button {
+margin-top: 15px;
+padding: 10px;
+background-color: #4caf50;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.contact-form button:hover {
+background-color: #388e3c;
+}
+
+.team-info {
+margin-top: 30px;
+background: #eef6f0;
+pdding: 15px;
+brder-radius: 6px;
+}
